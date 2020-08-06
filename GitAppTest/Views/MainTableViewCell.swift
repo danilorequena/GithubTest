@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MainTableViewCell: UITableViewCell {
     
@@ -37,10 +38,16 @@ class MainTableViewCell: UITableViewCell {
     }
     
     func setupCell(data: GithubData) {
+        guard let url = URL(string: data.owner.avatarUrl) else { return }
         DispatchQueue.main.async {
+            self.ivUser.kf.setImage(with: url)
+            self.ivUser.kf.indicatorType = .activity
+            self.lbName.text = data.name
             self.lbForks.text = data.forks.formatarMilhar
             self.lbStars.text = data.stars.formatarMilhar
-            self.lbDescription.text = data.name
+            self.lbDescription.text = data.description
         }
+        self.ivUser.clipsToBounds = true
+        self.ivUser.layer.cornerRadius = ivUser.frame.size.height / 2
     }
 }

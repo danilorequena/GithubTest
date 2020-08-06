@@ -17,10 +17,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.tableView.delegate = self
-//        self.tableView.dataSource = self
         setupTableView()
         fetchData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     func fetchData() {
@@ -43,12 +46,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(MainTableViewCell.loadNib(), forCellReuseIdentifier: MainTableViewCell.identifier())
+        tableView.rowHeight = 150
         tableView.tableFooterView = UIView()
         
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,6 +61,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setupCell(data: data)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
     
