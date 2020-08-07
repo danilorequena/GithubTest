@@ -8,9 +8,9 @@
 import Foundation
 
 
-struct Items: Decodable {
-    let items : [GithubData]
-}
+//struct Items: Decodable {
+//    let items : [GithubData]
+//}
 
 struct GithubData: Decodable {
     let name: String
@@ -28,12 +28,12 @@ struct GithubData: Decodable {
     }
 }
 
-struct Owner: Decodable {
-    let authorName: String
-    let avatarUrl: String
-    
-    enum CodingKeys: String, CodingKey {
-        case authorName = "login"
-        case avatarUrl = "avatar_url"
-    }
-}
+//struct Owner: Decodable {
+//    let authorName: String
+//    let avatarUrl: String
+//
+//    enum CodingKeys: String, CodingKey {
+//        case authorName = "login"
+//        case avatarUrl = "avatar_url"
+//    }
+//}

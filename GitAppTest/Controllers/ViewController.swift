@@ -9,7 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var githubData = [GithubData]()
+//    var gistsData = [GistsData]()
+    var gistsData: [GistsData] = []
     let api = Interactor<Items>()
     var page = 1
 
@@ -27,16 +28,26 @@ class ViewController: UIViewController {
     }
     
     func fetchData() {
-        guard let url = URL(string: "\(Constants.basePath)\(page)") else { return }
+        guard let url = URL(string: "\(Constants.baseURL)\(page)") else { return }
         
-        api.fetchModel(url: url) { (items) in
-            if let itemsData = items {
-                for data in itemsData.items {
-                    self.githubData.append(data)
-                }
-            }
-            self.tableView.reloadData()
+//        api.fetchModel(url: url) { (items) in
+//            if let itemsData = items {
+//
+//                print("passou aqui")
+//                for data in itemsData.items {
+//                    self.gistsData.append(data)
+//                }
+//            }
+//            self.tableView.reloadData()
+//        }
+        
+        Request.loadAll { (items) in
+            self.gistsData += items
+        } onError: { (error) in
+            print(error)
         }
+        tableView.reloadData()
+
     }
 
 }
@@ -52,12 +63,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return githubData.count
+        return gistsData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.identifier(), for: indexPath) as! MainTableViewCell
-        let data = githubData[indexPath.row]
+        let data = gistsData[indexPath.row]
         cell.setupCell(data: data)
         
         return cell

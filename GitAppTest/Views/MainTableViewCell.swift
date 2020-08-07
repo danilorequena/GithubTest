@@ -10,7 +10,7 @@ import Kingfisher
 
 class MainTableViewCell: UITableViewCell {
     
-    var items: [GithubData] = []
+    var items: [GistsData] = []
 
     @IBOutlet weak var ivUser: UIImageView!
     @IBOutlet weak var lbStars: UILabel!
@@ -37,14 +37,14 @@ class MainTableViewCell: UITableViewCell {
         return String(describing: self)
     }
     
-    func setupCell(data: GithubData) {
-        guard let url = URL(string: data.owner.avatarUrl) else { return }
+    func setupCell(data: GistsData) {
+        guard let url = URL(string: data.owner.avatarURL) else { return }
         DispatchQueue.main.async {
             self.ivUser.kf.setImage(with: url)
             self.ivUser.kf.indicatorType = .activity
-            self.lbName.text = data.name
-            self.lbForks.text = data.forks.formatarMilhar
-            self.lbStars.text = data.stars.formatarMilhar
+            self.lbName.text = data.owner.login
+//            self.lbForks.text = data.forks.formatarMilhar
+//            self.lbStars.text = data.stars.formatarMilhar
             self.lbDescription.text = data.description
         }
         self.ivUser.clipsToBounds = true

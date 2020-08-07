@@ -21,6 +21,7 @@
 		FF0067F324DA477D00980F1A /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0067F224DA477D00980F1A /* Request.swift */; };
 		FF0067F524DA4A7E00980F1A /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0067F424DA4A7E00980F1A /* GitHub.swift */; };
 		FF0067F824DA4E2100980F1A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0067F724DA4E2100980F1A /* Constants.swift */; };
+		FF465DB224DC4C11000D839D /* Gists.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF465DB124DC4C10000D839D /* Gists.swift */; };
 		FFBA5C9324DB6522000447BB /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBA5C9224DB6522000447BB /* Interactor.swift */; };
 		FFD3739224DB5665009736CE /* Int+Extesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3739124DB5665009736CE /* Int+Extesion.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		FF0067F224DA477D00980F1A /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		FF0067F424DA4A7E00980F1A /* GitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
 		FF0067F724DA4E2100980F1A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FF465DB124DC4C10000D839D /* Gists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gists.swift; sourceTree = "<group>"; };
 		FFBA5C9224DB6522000447BB /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		FFD3739124DB5665009736CE /* Int+Extesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extesion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				FF0067F424DA4A7E00980F1A /* GitHub.swift */,
+				FF465DB124DC4C10000D839D /* Gists.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				FFD3739224DB5665009736CE /* Int+Extesion.swift in Sources */,
 				FF0067D324DA39EB00980F1A /* SceneDelegate.swift in Sources */,
 				FF0067F324DA477D00980F1A /* Request.swift in Sources */,
+				FF465DB224DC4C11000D839D /* Gists.swift in Sources */,
 				FF0067F124DA453B00980F1A /* Endpoint.swift in Sources */,
 				FF0067EE24DA41CA00980F1A /* MainTableViewCell.swift in Sources */,
 				FF0067F824DA4E2100980F1A /* Constants.swift in Sources */,
