@@ -22,6 +22,8 @@
 		FF0067F524DA4A7E00980F1A /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0067F424DA4A7E00980F1A /* GitHub.swift */; };
 		FF0067F824DA4E2100980F1A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0067F724DA4E2100980F1A /* Constants.swift */; };
 		FF465DB224DC4C11000D839D /* Gists.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF465DB124DC4C10000D839D /* Gists.swift */; };
+		FF465DB424DCF2F0000D839D /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF465DB324DCF2EF000D839D /* NetworkProvider.swift */; };
+		FF465DB624DCF3E7000D839D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF465DB524DCF3E7000D839D /* NetworkError.swift */; };
 		FFBA5C9324DB6522000447BB /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBA5C9224DB6522000447BB /* Interactor.swift */; };
 		FFD3739224DB5665009736CE /* Int+Extesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3739124DB5665009736CE /* Int+Extesion.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +48,8 @@
 		FF0067F424DA4A7E00980F1A /* GitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
 		FF0067F724DA4E2100980F1A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FF465DB124DC4C10000D839D /* Gists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gists.swift; sourceTree = "<group>"; };
+		FF465DB324DCF2EF000D839D /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		FF465DB524DCF3E7000D839D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		FFBA5C9224DB6522000447BB /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		FFD3739124DB5665009736CE /* Int+Extesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extesion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,6 +160,8 @@
 				FF0067F024DA453B00980F1A /* Endpoint.swift */,
 				FF0067F224DA477D00980F1A /* Request.swift */,
 				FFBA5C9224DB6522000447BB /* Interactor.swift */,
+				FF465DB324DCF2EF000D839D /* NetworkProvider.swift */,
+				FF465DB524DCF3E7000D839D /* NetworkError.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -285,6 +291,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF0067DB24DA39EB00980F1A /* GitAppTest.xcdatamodeld in Sources */,
+				FF465DB624DCF3E7000D839D /* NetworkError.swift in Sources */,
+				FF465DB424DCF2F0000D839D /* NetworkProvider.swift in Sources */,
 				FF0067D524DA39EB00980F1A /* ViewController.swift in Sources */,
 				FFBA5C9324DB6522000447BB /* Interactor.swift in Sources */,
 				FF0067F524DA4A7E00980F1A /* GitHub.swift in Sources */,

@@ -19,7 +19,7 @@ enum GitHubError {
 class Request {
     private static let session = URLSession.shared
     
-    class func loadAll(onComplete: @escaping ([GistsData]) -> Void, onError: @escaping (GitHubError) -> Void) {
+    class func loadAll(onComplete: @escaping ([Gists]?) -> Void, onError: @escaping (GitHubError) -> Void) {
         guard let url = URL(string: Constants.baseURL) else {
             onError(.url)
             return
@@ -34,7 +34,8 @@ class Request {
                 if response.statusCode == 200 {
                     guard let data = data else { return }
                     do {
-                        let repositories = try JSONDecoder().decode([GistsData].self, from: data)
+                        let decoder = JSONDecoder()
+                        let repositories = try decoder.decode([Gists].self, from: data)
                         onComplete(repositories)
                     } catch let jsonErr as NSError {
                         onError(.invalidJSON)

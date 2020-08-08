@@ -14,9 +14,9 @@ class MainTableViewCell: UITableViewCell {
 
     @IBOutlet weak var ivUser: UIImageView!
     @IBOutlet weak var lbStars: UILabel!
-    @IBOutlet weak var lbForks: UILabel!
     @IBOutlet weak var lbDescription: UILabel!
     @IBOutlet weak var lbName: UILabel!
+    @IBOutlet weak var bgView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,16 +37,13 @@ class MainTableViewCell: UITableViewCell {
         return String(describing: self)
     }
     
-    func setupCell(data: GistsData) {
+    func setupCell(data: Gists) {
         guard let url = URL(string: data.owner.avatarURL) else { return }
-        DispatchQueue.main.async {
-            self.ivUser.kf.setImage(with: url)
-            self.ivUser.kf.indicatorType = .activity
-            self.lbName.text = data.owner.login
-//            self.lbForks.text = data.forks.formatarMilhar
-//            self.lbStars.text = data.stars.formatarMilhar
-            self.lbDescription.text = data.description
-        }
+        self.ivUser.kf.setImage(with: url)
+        self.ivUser.kf.indicatorType = .activity
+        self.lbName.text = data.owner.ownerName
+        self.bgView.layer.cornerRadius = 10
+        self.lbDescription.text = "\(data.files.values)"
         self.ivUser.clipsToBounds = true
         self.ivUser.layer.cornerRadius = ivUser.frame.size.height / 2
     }
