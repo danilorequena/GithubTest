@@ -71,6 +71,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableView.automaticDimension
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == gistsData.count - 10 {
+            page += 1
+            fetchData()
+            print("Carregando mais")
+        }
+     }
+    
     
 }
 
