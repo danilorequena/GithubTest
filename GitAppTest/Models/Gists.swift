@@ -42,10 +42,12 @@ struct File: Codable {
 struct Owner: Codable {
     let ownerName: String
     let avatarURL: String
+    let url: String
 
     enum CodingKeys: String, CodingKey {
         case ownerName = "login"
         case avatarURL = "avatar_url"
+        case url = "html_url"
     }
 }
 

@@ -11,6 +11,7 @@ struct Constants {
     // MARK: - URLs
 //    static let baseURL = "https://api.github.com/search/repositories?q=language:Swift&sort=stars&page="
     static let baseURL = "https://api.github.com/gists/public?page="
+    static let cellName = "cell"
 }
 
     

@@ -47,11 +47,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func setupTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.register(MainTableViewCell.loadNib(), forCellReuseIdentifier: MainTableViewCell.identifier())
         tableView.rowHeight = 150
         tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination as! DetailViewController
+        controller.gist = gistsData[tableView.indexPathForSelectedRow!.row]
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,7 +63,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.identifier(), for: indexPath) as! MainTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellName, for: indexPath) as! MainTableViewCell
         let data = gistsData[indexPath.row]
         cell.layer.cornerRadius = 10
         cell.setupCell(data: data)

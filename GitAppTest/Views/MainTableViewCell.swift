@@ -13,8 +13,7 @@ class MainTableViewCell: UITableViewCell {
     var items: [GistsData] = []
 
     @IBOutlet weak var ivUser: UIImageView!
-    @IBOutlet weak var lbStars: UILabel!
-    @IBOutlet weak var lbDescription: UILabel!
+    @IBOutlet weak var labelType: UILabel!
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var bgView: UIView!
     
@@ -42,8 +41,7 @@ class MainTableViewCell: UITableViewCell {
         self.ivUser.kf.setImage(with: url)
         self.ivUser.kf.indicatorType = .activity
         self.lbName.text = data.owner.ownerName
-        self.bgView.layer.cornerRadius = 10
-        self.lbDescription.text = "\(data.files.values)"
+        self.labelType.text = data.files.values.first?.type
         self.ivUser.clipsToBounds = true
         self.ivUser.layer.cornerRadius = ivUser.frame.size.height / 2
     }

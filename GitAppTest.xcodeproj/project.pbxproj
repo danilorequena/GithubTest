@@ -24,6 +24,8 @@
 		FF465DB224DC4C11000D839D /* Gists.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF465DB124DC4C10000D839D /* Gists.swift */; };
 		FF465DB424DCF2F0000D839D /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF465DB324DCF2EF000D839D /* NetworkProvider.swift */; };
 		FF465DB624DCF3E7000D839D /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF465DB524DCF3E7000D839D /* NetworkError.swift */; };
+		FF7B90A024DE523000D148D1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7B909F24DE523000D148D1 /* DetailViewController.swift */; };
+		FF7B90A224DF384000D148D1 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7B90A124DF383F00D148D1 /* WebViewController.swift */; };
 		FFBA5C9324DB6522000447BB /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBA5C9224DB6522000447BB /* Interactor.swift */; };
 		FFD3739224DB5665009736CE /* Int+Extesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3739124DB5665009736CE /* Int+Extesion.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +52,8 @@
 		FF465DB124DC4C10000D839D /* Gists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gists.swift; sourceTree = "<group>"; };
 		FF465DB324DCF2EF000D839D /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		FF465DB524DCF3E7000D839D /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		FF7B909F24DE523000D148D1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FF7B90A124DF383F00D148D1 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		FFBA5C9224DB6522000447BB /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		FFD3739124DB5665009736CE /* Int+Extesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extesion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				FF0067D424DA39EB00980F1A /* ViewController.swift */,
+				FF7B909F24DE523000D148D1 /* DetailViewController.swift */,
+				FF7B90A124DF383F00D148D1 /* WebViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -302,8 +308,10 @@
 				FF0067F324DA477D00980F1A /* Request.swift in Sources */,
 				FF465DB224DC4C11000D839D /* Gists.swift in Sources */,
 				FF0067F124DA453B00980F1A /* Endpoint.swift in Sources */,
+				FF7B90A024DE523000D148D1 /* DetailViewController.swift in Sources */,
 				FF0067EE24DA41CA00980F1A /* MainTableViewCell.swift in Sources */,
 				FF0067F824DA4E2100980F1A /* Constants.swift in Sources */,
+				FF7B90A224DF384000D148D1 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
