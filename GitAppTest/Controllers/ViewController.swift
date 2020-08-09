@@ -66,9 +66,19 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellName, for: indexPath) as! MainTableViewCell
         let data = gistsData[indexPath.row]
         cell.layer.cornerRadius = 10
+        cell.buttonFavorite.addTarget(self, action: #selector(favoriteCliked(sender:)), for: .touchUpInside)
         cell.setupCell(data: data)
         
         return cell
+    }
+    
+    @objc func favoriteCliked(sender: UIButton) {
+        print("Button pressed")
+        if sender.isSelected {
+            sender.isSelected = false
+        } else {
+            sender.isSelected = true
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

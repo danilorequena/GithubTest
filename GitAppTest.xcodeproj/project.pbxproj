@@ -28,6 +28,8 @@
 		FF7B90A224DF384000D148D1 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7B90A124DF383F00D148D1 /* WebViewController.swift */; };
 		FFBA5C9324DB6522000447BB /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFBA5C9224DB6522000447BB /* Interactor.swift */; };
 		FFD3739224DB5665009736CE /* Int+Extesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD3739124DB5665009736CE /* Int+Extesion.swift */; };
+		FFF3235C24DF87240037D604 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF3235B24DF87230037D604 /* FavoriteTableViewCell.swift */; };
+		FFF3235E24DF87640037D604 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFF3235D24DF87640037D604 /* FavoriteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,8 @@
 		FF7B90A124DF383F00D148D1 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		FFBA5C9224DB6522000447BB /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		FFD3739124DB5665009736CE /* Int+Extesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extesion.swift"; sourceTree = "<group>"; };
+		FFF3235B24DF87230037D604 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		FFF3235D24DF87640037D604 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 				FF0067D624DA39EB00980F1A /* Main.storyboard */,
 				FF0067EC24DA41CA00980F1A /* MainTableViewCell.swift */,
 				FF0067ED24DA41CA00980F1A /* MainTableViewCell.xib */,
+				FFF3235B24DF87230037D604 /* FavoriteTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 			children = (
 				FF0067D424DA39EB00980F1A /* ViewController.swift */,
 				FF7B909F24DE523000D148D1 /* DetailViewController.swift */,
+				FFF3235D24DF87640037D604 /* FavoriteViewController.swift */,
 				FF7B90A124DF383F00D148D1 /* WebViewController.swift */,
 			);
 			path = Controllers;
@@ -300,8 +306,10 @@
 				FF465DB624DCF3E7000D839D /* NetworkError.swift in Sources */,
 				FF465DB424DCF2F0000D839D /* NetworkProvider.swift in Sources */,
 				FF0067D524DA39EB00980F1A /* ViewController.swift in Sources */,
+				FFF3235E24DF87640037D604 /* FavoriteViewController.swift in Sources */,
 				FFBA5C9324DB6522000447BB /* Interactor.swift in Sources */,
 				FF0067F524DA4A7E00980F1A /* GitHub.swift in Sources */,
+				FFF3235C24DF87240037D604 /* FavoriteTableViewCell.swift in Sources */,
 				FF0067D124DA39EB00980F1A /* AppDelegate.swift in Sources */,
 				FFD3739224DB5665009736CE /* Int+Extesion.swift in Sources */,
 				FF0067D324DA39EB00980F1A /* SceneDelegate.swift in Sources */,
@@ -470,7 +478,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dobigaster.GitAppTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -491,7 +499,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = dobigaster.GitAppTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
