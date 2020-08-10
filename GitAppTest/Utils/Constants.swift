@@ -9,8 +9,9 @@ import Foundation
 
 struct Constants {
     // MARK: - URLs
-//    static let baseURL = "https://api.github.com/search/repositories?q=language:Swift&sort=stars&page="
     static let baseURL = "https://api.github.com/gists/public?page="
+    static let name = "https://api.github.com/users/"
+    // MARK: - Cells
     static let cellName = "cell"
 }
 

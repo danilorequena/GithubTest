@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FavoriteTableViewCell: UITableViewCell {
 
@@ -21,6 +22,16 @@ class FavoriteTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setupCell(with gistDataModel: GistDataModel) {
+        ownerName.text = gistDataModel.ownerName
+        if let image = gistDataModel.ownerImage {
+            guard let url = URL(string: image) else { return }
+            imageOwner.kf.setImage(with: url)
+        } else {
+            imageOwner.image = UIImage(named: "noImage")
+        }
     }
 
 }

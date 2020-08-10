@@ -15,7 +15,6 @@ class MainTableViewCell: UITableViewCell {
     @IBOutlet weak var ivUser: UIImageView!
     @IBOutlet weak var labelType: UILabel!
     @IBOutlet weak var lbName: UILabel!
-    @IBOutlet weak var buttonFavorite: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,27 +25,6 @@ class MainTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
-//    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-//        super.init(style: style, reuseIdentifier: reuseIdentifier)
-//        let favoriteButton = UIButton(type: .system)
-//        favoriteButton.setTitle("Some Title", for: .normal)
-//        favoriteButton.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-//        accessoryView = favoriteButton
-//        
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
-    class func loadNib() -> UINib {
-        return UINib(nibName: String(describing: self), bundle: nil)
-    }
-    
-    class func identifier() -> String {
-        return String(describing: self)
     }
     
     func setupCell(data: Gists) {
