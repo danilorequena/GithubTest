@@ -32,7 +32,7 @@ class MainTableViewCell: UITableViewCell {
         backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         layer.borderWidth = 4
         layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        layer.cornerRadius = 16
+        layer.cornerRadius = 10
         self.ivUser.kf.setImage(with: url)
         self.ivUser.kf.indicatorType = .activity
         self.lbName.text = data.owner.ownerName
