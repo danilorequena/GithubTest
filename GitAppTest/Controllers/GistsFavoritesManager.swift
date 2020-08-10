@@ -11,16 +11,16 @@ class GistsFavoritesManager {
     static let shared = GistsFavoritesManager()
     var gistsData: [GistDataModel] = []
     
-//    func saveGistFavorite(indexPath: IndexPath, with context: NSManagedObjectContext, dataModel: GistDataModel) {
-//        var data = gistsData[indexPath.row]
-//        data = GistDataModel(context: context)
-//        dataModel.ownerName = data.owner.ownerName
-//        do {
-//            try context.save()
-//        } catch {
-//            print(error.localizedDescription)
-//        }
-//    }
+    func saveGistFavorite(with context: NSManagedObjectContext) {
+        let fetchRequest: NSFetchRequest<GistDataModel> = GistDataModel.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "ownerName", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        do {
+            gistsData = try context.fetch(fetchRequest)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
     
     func deteteFavorite(index: Int, context: NSManagedObjectContext) {
         let gist = gistsData[index]

@@ -29,6 +29,10 @@ class MainTableViewCell: UITableViewCell {
     
     func setupCell(data: Gists) {
         guard let url = URL(string: data.owner.avatarURL) else { return }
+        backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        layer.borderWidth = 4
+        layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        layer.cornerRadius = 16
         self.ivUser.kf.setImage(with: url)
         self.ivUser.kf.indicatorType = .activity
         self.lbName.text = data.owner.ownerName

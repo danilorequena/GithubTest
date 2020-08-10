@@ -16,7 +16,6 @@
 		FF0067DD24DA39EF00980F1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF0067DC24DA39EF00980F1A /* Assets.xcassets */; };
 		FF0067E024DA39EF00980F1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0067DE24DA39EF00980F1A /* LaunchScreen.storyboard */; };
 		FF0067EE24DA41CA00980F1A /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0067EC24DA41CA00980F1A /* MainTableViewCell.swift */; };
-		FF0067EF24DA41CA00980F1A /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF0067ED24DA41CA00980F1A /* MainTableViewCell.xib */; };
 		FF0067F124DA453B00980F1A /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0067F024DA453B00980F1A /* Endpoint.swift */; };
 		FF0067F324DA477D00980F1A /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0067F224DA477D00980F1A /* Request.swift */; };
 		FF0067F524DA4A7E00980F1A /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0067F424DA4A7E00980F1A /* GitHub.swift */; };
@@ -47,7 +46,6 @@
 		FF0067DF24DA39EF00980F1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF0067E124DA39EF00980F1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF0067EC24DA41CA00980F1A /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
-		FF0067ED24DA41CA00980F1A /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
 		FF0067F024DA453B00980F1A /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		FF0067F224DA477D00980F1A /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		FF0067F424DA4A7E00980F1A /* GitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 			children = (
 				FF0067D624DA39EB00980F1A /* Main.storyboard */,
 				FF0067EC24DA41CA00980F1A /* MainTableViewCell.swift */,
-				FF0067ED24DA41CA00980F1A /* MainTableViewCell.xib */,
 				FFF3235B24DF87230037D604 /* FavoriteTableViewCell.swift */,
 			);
 			path = Views;
@@ -251,7 +248,6 @@
 			files = (
 				FF0067E024DA39EF00980F1A /* LaunchScreen.storyboard in Resources */,
 				FF0067DD24DA39EF00980F1A /* Assets.xcassets in Resources */,
-				FF0067EF24DA41CA00980F1A /* MainTableViewCell.xib in Resources */,
 				FF0067D824DA39EB00980F1A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

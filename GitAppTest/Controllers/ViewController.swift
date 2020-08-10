@@ -10,18 +10,22 @@ import UIKit
 class ViewController: UIViewController {
     
     var gistsData: [Gists] = []
+    var searchGists = [Gists]()
+    var searching = false
     var gistDataModel: GistDataModel?
     var page = 1
     var label = UILabel()
+    let searchController = UISearchController(searchResultsController: nil)
 
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        label.text = "Não há favoritos cadastrados!"
+        label.text = "Carregando..."
         label.textAlignment = .center
         setupTableView()
         fetchData()
+        setupSearch()
         configureNavigationBar(largeTitleColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), backgoundColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), tintColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), title: "Gists", preferredLargeTitle: true)
     }
     
@@ -57,6 +61,15 @@ class ViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
+    
+    func setupSearch() {
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.tintColor = .white
+        searchController.searchBar.barTintColor = .white
+        searchController.searchBar.delegate = self
+        navigationItem.searchController = searchController
+    }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -74,17 +87,23 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         tableView.backgroundView = gistsData.count == 0 ? label : nil
-        return gistsData.count
+        if searching{
+            return searchGists.count
+        } else {
+            return gistsData.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellName, for: indexPath) as! MainTableViewCell
-        let data = gistsData[indexPath.row]
-        cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        cell.layer.borderWidth = 4
-        cell.layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        cell.layer.cornerRadius = 16
-        cell.setupCell(data: data)
+        if searching {
+            let data = searchGists[indexPath.row]
+            cell.setupCell(data: data)
+        } else {
+            let data = gistsData[indexPath.row]
+            cell.setupCell(data: data)
+        }
+        
         
         return cell
     }
@@ -96,10 +115,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
         save.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         save.image = UIImage(systemName: "star")
-        
         let config  = UISwipeActionsConfiguration(actions: [save])
         config.performsFirstActionWithFullSwipe = false
-        
         return config
     }
     
@@ -110,5 +127,28 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             print("Carregando mais")
         }
      }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+}
+
+extension ViewController: UISearchResultsUpdating ,UISearchBarDelegate {
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searching = false
+        searchBar.text = ""
+        tableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchGists = gistsData.filter({$0.owner.ownerName.lowercased().prefix(searchText.count) == searchText.lowercased()})
+        searching = true
+        tableView.reloadData()
+    }
+    
 }
 
