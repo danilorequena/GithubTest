@@ -1,34 +1,26 @@
 PODS:
-  - Alamofire (5.2.2)
   - Kingfisher (5.14.1):
     - Kingfisher/Core (= 5.14.1)
   - Kingfisher/Core (5.14.1)
-  - PromiseKit (6.13.1):
-    - PromiseKit/CorePromise (= 6.13.1)
-    - PromiseKit/Foundation (= 6.13.1)
-    - PromiseKit/UIKit (= 6.13.1)
-  - PromiseKit/CorePromise (6.13.1)
-  - PromiseKit/Foundation (6.13.1):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.13.1):
-    - PromiseKit/CorePromise
+  - Nimble (8.1.1)
+  - Quick (3.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.2)
   - Kingfisher (~> 5.0)
-  - PromiseKit
+  - Nimble
+  - Quick
 
 SPEC REPOS:
   trunk:
-    - Alamofire
     - Kingfisher
-    - PromiseKit
+    - Nimble
+    - Quick
 
 SPEC CHECKSUMS:
-  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   Kingfisher: 8050bc6f7f68cbf3908bd04df7ccbac188f6d6d6
-  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
+  Nimble: 5f8a2fb6fa343a7242dfdd9d42f7267419d464b2
+  Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
 
-PODFILE CHECKSUM: a4798551d38314f350ee092405f21126fde35a9e
+PODFILE CHECKSUM: c0b9c8fe0daf31c9fdf117c95cd2bfece0b5a20f
 
 COCOAPODS: 1.9.3

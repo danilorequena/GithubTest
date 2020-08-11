@@ -7,9 +7,13 @@ target 'GitAppTest' do
 
   # Pods for GitAppTest
 
-pod 'Alamofire', '~> 5.2'
-# pod 'SDWebImage', '~> 5.0'
-pod 'Kingfisher', '~> 5.0'
-pod 'PromiseKit'
+	pod 'Kingfisher', '~> 5.0'
+
+end
+
+target 'GitAppTestTests' do 
+  use_frameworks!
+	pod 'Quick'
+	pod 'Nimble'
 
 end

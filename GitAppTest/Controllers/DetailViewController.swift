@@ -17,7 +17,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var backgroundDescription: UIView!
     @IBOutlet weak var buttonGithub: UIButton!
     
-    var gist: Gists!
+    var gist: Gists?
+    var gistDataModel: GistDataModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,22 +39,26 @@ class DetailViewController: UIViewController {
     }
     
     func setupImage() {
-        guard let url = URL(string: gist.owner.avatarURL) else { return }
+        if let image = gist?.owner.avatarURL {
+        guard let url = URL(string: image) else { return }
         imageOwner.kf.setImage(with: url)
         imageOwner.clipsToBounds = true
         imageOwner.layer.cornerRadius = imageOwner.frame.size.height / 2
+        } else {
+            imageOwner.image = UIImage(named: "noImage")
+        }
     }
     
     func setupLabels() {
         let noDescription = "No description"
         labelNameOwner.font = .boldSystemFont(ofSize: 17)
         labelNameOwner.textColor = .darkGray
-        labelNameOwner.text = gist.owner.ownerName
+        labelNameOwner.text = gist?.owner.ownerName
         
-        if gist.gistsDatumDescription != "" {
+        if gist?.gistsDatumDescription != "" {
             labelDescription.font = .systemFont(ofSize: 15)
             labelDescription.textColor = UIColor.white
-            labelDescription.text = gist.gistsDatumDescription
+            labelDescription.text = gist?.gistsDatumDescription
         } else {
             backgroundDescription.backgroundColor = .clear
             labelDescription.font = .systemFont(ofSize: 15)

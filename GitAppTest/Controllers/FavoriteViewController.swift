@@ -10,7 +10,6 @@ import CoreData
 
 class FavoriteViewController: UIViewController {
 
-    var manager = GistsFavoritesManager.shared
     var fetchedResultsController: NSFetchedResultsController<GistDataModel>!
     var gistsData: [GistDataModel]!
     var label = UILabel()
@@ -21,10 +20,11 @@ class FavoriteViewController: UIViewController {
         super.viewDidLoad()
         label.text = "Não há favoritos cadastrados!"
         label.textAlignment = .center
+        label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         setupTableView()
         loadGists()
         configureNavigationBar(largeTitleColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), backgoundColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), tintColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), title: "Favorites", preferredLargeTitle: true)
-
+        tableView.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
     }
     
     func loadGists() {
@@ -49,6 +49,13 @@ class FavoriteViewController: UIViewController {
             gistsData.remove(at: index)
         } catch {
             print(error.localizedDescription)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "FavoriteSegue"{
+        let controller = segue.destination as? DetailViewController
+        controller?.gistDataModel = gistsData[tableView.indexPathForSelectedRow!.row]
         }
     }
 }

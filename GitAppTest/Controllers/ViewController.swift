@@ -23,10 +23,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         label.text = "Carregando..."
         label.textAlignment = .center
+        label.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         setupTableView()
         fetchData()
         setupSearch()
         configureNavigationBar(largeTitleColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), backgoundColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), tintColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), title: "Gists", preferredLargeTitle: true)
+        tableView.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +39,6 @@ class ViewController: UIViewController {
     func fetchData() {
         guard let url = URL(string: "\(Constants.baseURL)\(page)") else { return }
         print(url)
-        
         Request.loadAll { (items) in
             if let items = items {
                 self.gistsData += items
@@ -55,6 +56,7 @@ class ViewController: UIViewController {
         gistDataModel = GistDataModel(context: context)
         gistDataModel?.ownerName = data.owner.ownerName
         gistDataModel?.ownerImage = data.owner.avatarURL
+        gistDataModel?.ownerDescription = data.gistsDatumDescription
         do {
             try context.save()
         } catch {
@@ -108,8 +110,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let save = UIContextualAction(style: .normal, title: "save") { (action, view, actionPerformed: (Bool) -> ()) in
+            let alert = UIAlertController(title: "", message: "Adicionado aos favoritos", preferredStyle: .alert)
+            let action = UIAlertAction(title: "continuar", style: .cancel, handler: nil)
+            alert.addAction(action)
+            alert.view.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+            self.present(alert, animated: true, completion: nil)
             self.saveGistFavorite(indexPath: indexPath)
             actionPerformed(true)
         }
@@ -121,10 +128,15 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == gistsData.count - 10 {
+        if indexPath.row == gistsData.count - 2 {
             page += 1
             fetchData()
             print("Carregando mais")
+            
+            cell.alpha = 0
+            UIView.animate(withDuration: 1.0) {
+                cell.alpha = 1.0
+            }
         }
      }
     

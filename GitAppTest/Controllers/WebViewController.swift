@@ -10,7 +10,7 @@ import WebKit
 
 class WebViewController: UIViewController {
     
-    var gist: Gists!
+    var gist: Gists?
 
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var loading: UIActivityIndicatorView!
@@ -21,13 +21,21 @@ class WebViewController: UIViewController {
     }
     
     func loadWebView() {
-        let url = URL(string: gist.owner.url)
-        let request = URLRequest(url: url!)
-        title = gist.owner.ownerName
+        if let gistUrl = gist?.owner.url {
+            guard let url = URL(string: gistUrl) else { return }
+            let request = URLRequest(url: url)
+            title = gist?.owner.ownerName
+            webView.load(request)
+        } else {
+            guard let url = URL(string: "apple.com") else { return }
+            let request = URLRequest(url: url)
+            webView.load(request)
+        }
+        
         
         webView.allowsBackForwardNavigationGestures = true
         webView.navigationDelegate = self
-        webView.load(request)
+        
     }
 }
 

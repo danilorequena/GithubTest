@@ -25,10 +25,10 @@ class FavoriteTableViewCell: UITableViewCell {
     }
     
     func setupCell(with gistDataModel: GistDataModel) {
-        backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        layer.borderWidth = 4
-        layer.borderColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        layer.cornerRadius = 10
+        backgroundColor = #colorLiteral(red: 0.5723067522, green: 0.5723067522, blue: 0.5723067522, alpha: 1)
+        layer.borderWidth = 5
+        layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        layer.cornerRadius = 12
         ownerName.text = gistDataModel.ownerName
         if let image = gistDataModel.ownerImage {
             guard let url = URL(string: image) else { return }
