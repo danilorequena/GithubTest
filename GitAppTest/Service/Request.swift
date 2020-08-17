@@ -19,8 +19,8 @@ enum GitHubError {
 class Request {
     private static let session = URLSession.shared
     
-    class func loadAll(onComplete: @escaping ([Gists]?) -> Void, onError: @escaping (GitHubError) -> Void) {
-        guard let url = URL(string: Constants.baseURL) else {
+    class func loadGists(urlString: String, onComplete: @escaping ([Gists]?) -> Void, onError: @escaping (GitHubError) -> Void) {
+        guard let url = URL(string: urlString) else {
             onError(.url)
             return
         }
@@ -31,7 +31,7 @@ class Request {
                     print("NoResponse")
                     return
                 }
-                if response.statusCode == 200 {
+//                if response.statusCode != 500 {
                     guard let data = data else { return }
                     do {
                         let decoder = JSONDecoder()
@@ -41,10 +41,10 @@ class Request {
                         onError(.invalidJSON)
                         print(jsonErr.debugDescription)
                     }
-                } else {
-                    onError(.responseStatusCode(code: response.statusCode))
-                    print("Erro de servidor")
-                }
+//                } else {
+//                    onError(.responseStatusCode(code: response.statusCode))
+//                    print("Erro de servidor")
+//                }
             } else {
                 onError(.taskError(error: error!))
                 print("Algo deu errado")

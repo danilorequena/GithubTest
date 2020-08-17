@@ -39,7 +39,7 @@ class ViewController: UIViewController {
     func fetchData() {
         guard let url = URL(string: "\(Constants.baseURL)\(page)") else { return }
         print(url)
-        Request.loadAll { (items) in
+        Request.loadGists(urlString: Constants.baseURL) { (items) in
             if let items = items {
                 self.gistsData += items
                 DispatchQueue.main.async {
