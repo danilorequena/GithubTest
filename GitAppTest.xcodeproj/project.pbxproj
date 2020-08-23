@@ -11,7 +11,7 @@
 		D5A779B83D5DDC7477CAC452 /* Pods_GitAppTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A02379115B3A552BF76E2DDB /* Pods_GitAppTestTests.framework */; };
 		FF0067D124DA39EB00980F1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0067D024DA39EB00980F1A /* AppDelegate.swift */; };
 		FF0067D324DA39EB00980F1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0067D224DA39EB00980F1A /* SceneDelegate.swift */; };
-		FF0067D524DA39EB00980F1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0067D424DA39EB00980F1A /* ViewController.swift */; };
+		FF0067D524DA39EB00980F1A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF0067D424DA39EB00980F1A /* MainViewController.swift */; };
 		FF0067D824DA39EB00980F1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF0067D624DA39EB00980F1A /* Main.storyboard */; };
 		FF0067DB24DA39EB00980F1A /* GitAppTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FF0067D924DA39EB00980F1A /* GitAppTest.xcdatamodeld */; };
 		FF0067DD24DA39EF00980F1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF0067DC24DA39EF00980F1A /* Assets.xcassets */; };
@@ -56,7 +56,7 @@
 		FF0067CD24DA39EB00980F1A /* GitAppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitAppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF0067D024DA39EB00980F1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF0067D224DA39EB00980F1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FF0067D424DA39EB00980F1A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FF0067D424DA39EB00980F1A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FF0067D724DA39EB00980F1A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF0067DA24DA39EB00980F1A /* GitAppTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GitAppTest.xcdatamodel; sourceTree = "<group>"; };
 		FF0067DC24DA39EF00980F1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 		FF0067E824DA3FFA00980F1A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FF0067D424DA39EB00980F1A /* ViewController.swift */,
+				FF0067D424DA39EB00980F1A /* MainViewController.swift */,
 				FF7B909F24DE523000D148D1 /* DetailViewController.swift */,
 				FFF3235D24DF87640037D604 /* FavoriteViewController.swift */,
 				FF7B90A124DF383F00D148D1 /* WebViewController.swift */,
@@ -419,7 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF0067DB24DA39EB00980F1A /* GitAppTest.xcdatamodeld in Sources */,
-				FF0067D524DA39EB00980F1A /* ViewController.swift in Sources */,
+				FF0067D524DA39EB00980F1A /* MainViewController.swift in Sources */,
 				FFF3235E24DF87640037D604 /* FavoriteViewController.swift in Sources */,
 				FFF3235C24DF87240037D604 /* FavoriteTableViewCell.swift in Sources */,
 				FF0067D124DA39EB00980F1A /* AppDelegate.swift in Sources */,

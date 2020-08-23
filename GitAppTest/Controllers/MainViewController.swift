@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     var gistsData: [Gists] = []
     var searchGists = [Gists]()
@@ -74,7 +74,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func setupTableView() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -145,7 +145,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension ViewController: UISearchResultsUpdating ,UISearchBarDelegate {
+extension MainViewController: UISearchResultsUpdating ,UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
         
     }
